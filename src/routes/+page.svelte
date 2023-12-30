@@ -1,10 +1,15 @@
 <script lang="ts">
-	import { Input } from '$lib/components/atoms';
+	import { Button, Input } from '$lib/components/atoms';
 </script>
 
-<form method="POST" class="">
-	<Input label="email" type="email" />
-	<Input label="senha" type="password" />
+<form method="POST">
+	<h1
+		class="text-gray-900 dark:text-white text-xl font-bold leading-tight tracking-tight md:text-2xl"
+	>
+		Sign in to your account
+	</h1>
+	<Input label="email" type="email" required />
+	<Input label="senha" type="password" required />
 	<br />
-	<Input type="submit" value="Enviar" />
+	<Button type="submit" value="Enviar" />
 </form>

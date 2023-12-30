@@ -14,16 +14,7 @@
 		size?: keyof typeof divStyles.variants.size;
 	};
 
-	// export let label = '';
-	// export let value = '';
-	// export let name = 'input';
-	// export let error = '';
-	// export let color = undefined as $$Props['color'];
-	// export let size = undefined as $$Props['size'];
-
 	let { label, value = '', name, error, color, size } = $$props as $$Props;
-
-	const isSubmit = $$restProps.type === 'submit';
 
 	const divStyles = tv({
 		base: '',
@@ -56,11 +47,7 @@
 	});
 </script>
 
-<!-- find a better way of not showing div on submit type -->
-<svelte:element
-	this={isSubmit ? 'div' : 'div'}
-	class={twMerge($$restProps.labelClass, 'flex flex-col', divStyles({ size, color }))}
->
+<div class={twMerge($$restProps.labelClass, 'flex flex-col', divStyles({ size, color }))}>
 	{#if label}
 		<label for={name} class="py-1">{label}</label>
 	{/if}
@@ -74,6 +61,6 @@
 	/>
 
 	{#if error}
-		<span class="text-sm text-red-500">{error}</span>
+		<span class="text-red-500 text-sm">{error}</span>
 	{/if}
-</svelte:element>
+</div>
