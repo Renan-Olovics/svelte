@@ -1,20 +1,15 @@
 <script lang="ts">
-	import type { HTMLInputAttributes, HTMLButtonAttributes } from 'svelte/elements';
+	import type { HTMLButtonAttributes } from 'svelte/elements';
 	import { tv } from 'tailwind-variants';
 	import { twMerge } from 'tailwind-merge';
 
-	type CommonProps = {
-		value?: string;
+	type $$Props = HTMLButtonAttributes & {
 		type: HTMLButtonAttributes['type'];
 		color?: keyof typeof styles.variants.color;
 		size?: keyof typeof styles.variants.size;
 	};
 
-	type $$Props = (HTMLButtonAttributes & CommonProps) | (HTMLInputAttributes & CommonProps);
-
-	let { value = '', color, size } = $$props as $$Props;
-
-	const isSubmit = $$restProps.type === 'submit';
+	let { color, size } = $$props as $$Props;
 
 	const styles = tv({
 		base: 'rounded flex items-center',
@@ -35,11 +30,9 @@
 	});
 </script>
 
-<svelte:element
-	this={isSubmit ? 'input' : 'button'}
+<button
 	class={twMerge($$restProps.labelClass, 'flex flex-col', styles({ size, color }))}
 	{...$$restProps}
-	{value}
 >
 	<slot />
-</svelte:element>
+</button>

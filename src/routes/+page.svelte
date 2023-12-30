@@ -11,5 +11,5 @@
 	<Input label="email" type="email" required />
 	<Input label="senha" type="password" required />
 	<br />
-	<Button type="submit" value="Enviar" />
+	<Button type="submit">Enviar</Button>
 </form>
