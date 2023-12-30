@@ -8,33 +8,15 @@
 		value?: string;
 		name?: string;
 		error?: string;
-		labelClass?: HTMLInputAttributes['class'];
 		type: HTMLInputAttributes['type'];
-		color?: keyof typeof divStyles.variants.color | keyof typeof inputStyle.variants.color;
-		size?: keyof typeof divStyles.variants.size;
+		size?: HTMLInputAttributes['class'];
+		color?: keyof typeof styles.variants.color;
+		labelClass?: HTMLInputAttributes['class'];
 	};
 
-	let { label, value = '', name, error, color, size } = $$props as $$Props;
+	let { label, value = '', name, error, color, size, labelClass } = $$props as $$Props;
 
-	const divStyles = tv({
-		base: '',
-		variants: {
-			size: {
-				sm: 'w-32',
-				md: 'w-52',
-				lg: 'w-96'
-			},
-			color: {
-				primary: ''
-			}
-		},
-		defaultVariants: {
-			size: 'lg',
-			color: 'primary'
-		}
-	});
-
-	const inputStyle = tv({
+	const styles = tv({
 		base: 'rounded border',
 		variants: {
 			color: {
@@ -47,13 +29,16 @@
 	});
 </script>
 
-<div class={twMerge($$restProps.labelClass, 'flex flex-col', divStyles({ size, color }))}>
+<div class={twMerge(size, 'flex w-96 flex-col')}>
 	{#if label}
-		<label for={name} class="py-1">{label}</label>
+		<label
+			class={twMerge(labelClass, 'text-gray-900 dark:text-white mb-2 block text-sm font-medium')}
+			for={name}>{label}</label
+		>
 	{/if}
 
 	<input
-		class={twMerge($$restProps.class, inputStyle({ color }))}
+		class={twMerge($$restProps.class, styles({ color }))}
 		bind:value
 		{name}
 		id={name}
