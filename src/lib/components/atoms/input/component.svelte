@@ -29,10 +29,10 @@
 	});
 </script>
 
-<div class={twMerge(size, 'flex w-96 flex-col')}>
+<div class={twMerge(size, 'flex h-16 w-80 flex-col')}>
 	{#if label}
 		<label
-			class={twMerge(labelClass, 'text-gray-900 dark:text-white mb-2 block text-sm font-medium')}
+			class={twMerge(labelClass, 'mb-2 block text-sm font-medium text-gray-900 dark:text-white')}
 			for={name}>{label}</label
 		>
 	{/if}
@@ -46,6 +46,6 @@
 	/>
 
 	{#if error}
-		<span class="text-red-500 text-sm">{error}</span>
+		<span class="text-sm text-red-500">{error}</span>
 	{/if}
 </div>
