@@ -2,7 +2,9 @@
 	import { Input } from '$lib/components/atoms';
 </script>
 
-<form method="POST">
-	<Input label="teste1" />
-	<Input label="teste2" />
+<form method="POST" class="">
+	<Input label="email" type="email" />
+	<Input label="senha" type="password" />
+	<br />
+	<Input type="submit" value="Enviar" />
 </form>

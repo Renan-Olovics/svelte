@@ -36,6 +36,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"tailwind-merge": "^2.2.0",
 		"tailwind-variants": "^0.1.19"
 	}
 }
