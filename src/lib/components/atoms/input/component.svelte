@@ -35,8 +35,8 @@
 
 	{#if label}
 		<label
-			class="peer-focus: bg-background text-fontColor pointer-events-none
-			absolute left-8 top-3 px-2 text-sm duration-300 ease-in-out peer-focus:-top-3
+			class="peer-focus: text-fontColor pointer-events-none absolute
+			left-8 top-3 bg-background px-2 text-sm duration-300 ease-in-out peer-focus:-top-3
 			data-[active=true]:-top-3
 			"
 			data-active={!!value || isActive}
