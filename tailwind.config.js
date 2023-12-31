@@ -4,8 +4,7 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				background: '#f5f4f4',
-				fontColor: '#9D9D9D'
+				background: '#f5f4f4'
 			},
 			fontFamily: {
 				Nunito: [

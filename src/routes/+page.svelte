@@ -1,9 +1,11 @@
 <script lang="ts">
-	import { Input } from '$lib/components/atoms';
+	import { Button, Input } from '$lib/components/atoms';
 </script>
 
 <aside>
-	<form method="POST">
-		<Input label="email" type="email" required error="ta errado" />
+	<form method="POST" class="flex flex-col items-center">
+		<Input label="email" type="email" iconName="mail" />
+		<Input label="password" type="password" required iconName="lock" />
+		<Button type="submit" disabled>Enviar</Button>
 	</form>
 </aside>

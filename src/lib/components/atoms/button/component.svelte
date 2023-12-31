@@ -9,18 +9,22 @@
 		size?: keyof typeof styles.variants.size;
 	};
 
-	let { color, size } = $$props as $$Props;
+	const { color, size, disabled } = $$props as $$Props;
 
 	const styles = tv({
-		base: 'rounded flex items-center',
+		base: 'rounded-3xl flex items-center',
 		variants: {
 			size: {
-				sm: 'w-32',
-				md: 'w-52',
-				lg: 'w-96'
+				sm: 'w-32 h-10',
+				md: 'w-52 h-10',
+				lg: 'w-96 h-10'
 			},
 			color: {
-				primary: 'bg-primary-600 text-white'
+				primary: 'bg-primary text-white',
+				secondary: 'bg-transparent text-[#1C1B1F]'
+			},
+			disabled: {
+				true: 'bg-[#1C1B1F] text-white opacity-50 cursor-not-allowed'
 			}
 		},
 		defaultVariants: {
@@ -31,7 +35,11 @@
 </script>
 
 <button
-	class={twMerge($$restProps.labelClass, 'flex flex-col', styles({ size, color }))}
+	class={twMerge(
+		$$restProps.labelClass,
+		'flex flex-col items-center justify-center',
+		styles({ size, color, disabled: !!disabled })
+	)}
 	{...$$restProps}
 >
 	<slot />
