@@ -1,10 +1,9 @@
 <script lang="ts">
-	import { Input, Icon } from '$lib/components/atoms';
+	import { Input } from '$lib/components/atoms';
 </script>
 
 <aside>
 	<form method="POST">
-		<Input label="email" type="email" required />
-		<Icon name="lock" />
+		<Input label="email" type="email" required error="ta errado" />
 	</form>
 </aside>

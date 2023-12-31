@@ -1,17 +1,17 @@
-<script lang="ts">
+<script context="module" lang="ts">
 	import * as Icons from './svg';
+	export type IconNames = keyof typeof Icons;
+	import type { SVGAttributes } from 'svelte/elements';
+</script>
 
-	type $$Props = {
-		name: keyof typeof Icons;
+<script lang="ts">
+	type $$Props = SVGAttributes<SVGSVGElement> & {
+		name: IconNames;
 		size?: string | number;
-		width?: string | number;
-		height?: string | number;
-		fill?: boolean;
-		stroke?: string;
 		color?: string;
 	};
 
-	let { name } = $$props as $$Props & {};
+	let { name } = $$props as $$Props;
 </script>
 
-<svelte:component this={Icons[name]} {...$$restProps}></svelte:component>
+<svelte:component this={Icons[name]} {...$$restProps} />
