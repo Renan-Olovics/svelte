@@ -9,7 +9,8 @@ export default {
 					100: '#1C1B1F'
 				},
 				corrigir: {
-					cor1: '#9D9D9D'
+					cor1: '#9D9D9D',
+					cor2: '#2B6CE2'
 				}
 			},
 			fontFamily: {
