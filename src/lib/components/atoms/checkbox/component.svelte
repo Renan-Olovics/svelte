@@ -5,11 +5,11 @@
 		checked?: boolean;
 	};
 
-	let { name, label, checked } = $$props as $$Props;
+	let { name, label, checked = false } = $$props as $$Props;
 </script>
 
 <div>
-	<input bind:checked id={name} {name} type="checkbox" />
+	<input {...$$restProps} bind:checked id={name} {name} type="checkbox" />
 
 	{#if label}
 		<label for={name}>

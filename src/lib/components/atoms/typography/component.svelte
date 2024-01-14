@@ -14,7 +14,8 @@
 			schema: {
 				title: 'text-primary-100 font-bold text-xl',
 				text: 'text-corrigir-cor1 font-normal text-sm',
-				link: 'text-corrigir-cor2 font-normal text-sm underline'
+				link: 'text-corrigir-cor2 font-normal text-sm underline',
+				error: 'text-red-500 font-normal text-sm'
 			}
 		}
 	});

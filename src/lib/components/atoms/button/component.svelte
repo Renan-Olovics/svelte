@@ -20,11 +20,11 @@
 				lg: 'w-96 h-10'
 			},
 			color: {
-				primary: 'bg-primary text-white',
-				secondary: 'bg-transparent text-[#1C1B1F]'
+				primary: 'bg-primary-100 text-white',
+				secondary: 'bg-transparent text-primary-100'
 			},
 			disabled: {
-				true: 'bg-[#1C1B1F] text-white opacity-50 cursor-not-allowed'
+				true: 'bg-primary-100 text-white opacity-50 cursor-not-allowed'
 			}
 		},
 		defaultVariants: {
