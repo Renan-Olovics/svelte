@@ -6,7 +6,7 @@ const schema = z.object({
 	email: z.string().email('Email invalido'),
 	password: z.string().min(6, 'Senha muito curta').max(16, 'Senha muito longa'),
 	//TODO: it's returning 'on' maybe i can check a better way of doing this
-	terms: z.string().refine((value) => value === 'on', { message: 'Você precisa aceitar os termos' })
+	terms: z.enum(['on'], { required_error: 'Você precisa aceitar os termos' })
 });
 
 export const actions = {
